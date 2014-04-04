@@ -1,0 +1,2437 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>It's a Tumor</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/css.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div class="step slide" data-x="0" data-y="0">
+        <q>It's A Tumor</q>
+
+        Eric (@XlogicX) Davisson<br><br><br><br><br><br><br><br>
+        <a href="https://github.com/XlogicX/Explosive-Steganography/blob/master/hivsneeze.pl">hivsneeze.pl --tumor (GitHub)</a><br>
+        <a href="https://github.com/bartaz/impress.js">impress.js framework by Bartek Szopka (GitHub)</a><br><br>
+        <span style="font-size: 10pt"><abbr title="
+This is just the first slide; this is how slide notes will be done.
+        ">Slide Notes</abbr></span>
+    </div>
+
+    <div class="step slide" data-x="1400" data-y="0" data-rotate-x="45" data-scale="1.1">
+        <q>The Quarantine Process</q><br>
+        -Remove the original malware<br><br>
+        -Store a forensic copy of the malware<br><br><br><br>
+
+        <br><br>-
+        <canvas id="alsodetected" width="700" height="50"></canvas>
+        <script>
+            var alsodetected = document.getElementById('alsodetected');
+            var alsodetected_ctx = alsodetected.getContext('2d');
+                alsodetected_ctx.rect(0,0, alsodetected.width, alsodetected.height);
+                var x = 15;
+                var y = 30;
+                alsodetected.addEventListener('click', alsodetectedh, false);
+
+            var alsodetected_grd = alsodetected_ctx.createLinearGradient(0,0,0, alsodetected.height / 2);
+            alsodetected_grd.addColorStop(0, '#FFF5F5');
+            alsodetected_grd.addColorStop(1, '#FFF5F5');
+            alsodetected_ctx.fillStyle = alsodetected_grd;
+            alsodetected_ctx.fill();
+
+            alsodetected_ctx.font = '12pt Arial';
+            alsodetected_ctx.lineWidth = 1;
+            alsodetected_ctx.strokeStyle = 'white';
+            alsodetected_ctx.strokeText('', x, y);
+
+            function alsodetectedh(e) {
+                alsodetected_grd = alsodetected_ctx.createLinearGradient(0,0,0, alsodetected.height / 2);
+                    alsodetected_grd.addColorStop(0, '#CC0000');
+                    alsodetected_grd.addColorStop(1, '#442222');
+                    alsodetected_ctx.fillStyle = alsodetected_grd;
+                    alsodetected_ctx.fill();
+                    alsodetected_ctx.font = '18pt Arial';
+                    alsodetected_ctx.lineWidth = 1;
+                    alsodetected_ctx.fillStyle = 'white';
+                    alsodetected_ctx.fillText('But if we have a copy of the malware, why isn\'t it detected too?', x, y);
+            }
+        </script>  
+    </div>  
+
+    <div class="step slide" data-x="2900" data-y="0" data-rotate-x="90" data-scale="1.21">
+        <q>Transformation</q><br>
+        -Just adding metadata to the malware and straight moving would be bad<br><br>
+        -We would have a hard disk denial of service condition that way (as the metadata would become very meta)<br><br>
+        -The data must be transformed somehow, This "eliminates" refires<br><br>
+        -Simple and easily reversable transformations are prefered<br><br>
+        -Theoretical options could include: Light compression, symmetric encryption, ROT13, XOR, etc...<br><br>
+        -Let's explore the ROT13 scenario next...
+    </div>
+
+    <div class="step slide" data-x="4600" data-y="0" data-rotate-x="135" data-scale="1.331">
+        <q>ROT13 (Rotate Alphabetically by 13 characters)</q>
+        -As there are 26 letters in the English alphabet (26/2 = 13):<br><br>
+        -performing a rotation once transforms<br><br>
+        -performing another round of rotation brings us back to original.<br><br>
+        ROT13 Decoder Strip...or whatever:<br><br>
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                    <th>I</th>
+                    <th>J</th>
+                    <th>K</th>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>N</th>
+                    <th>O</th>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>R</th>
+                    <th>S</th>
+                    <th>T</th>
+                    <th>U</th>
+                    <th>V</th>
+                    <th>W</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Z</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>N</th>
+                    <th>O</th>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>R</th>
+                    <th>S</th>
+                    <th>T</th>
+                    <th>U</th>
+                    <th>V</th>
+                    <th>W</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Z</th>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                    <th>E</th>
+                    <th>F</th>
+                    <th>G</th>
+                    <th>H</th>
+                    <th>I</th>
+                    <th>J</th>
+                    <th>K</th>
+                    <th>L</th>
+                    <th>M</th>                    
+                </tr>
+            </tbody>
+        </table>  
+        <br>
+        rot13(VIRUS) = IVEHF<br>
+        but rot13(IVEHF) = VIRUS                     
+    </div>
+
+    <div class="step slide" data-x="6400" data-y="0" data-rotate-x="180" data-scale="1.4641">
+        <q>Theoretical Attack</q>
+        -If AntiVirus signature looks for the string VIRUS (then quarantines)<br><br>
+        -the file with "VIRUS" in it is removed,<br><br>
+        -we have a file in quarantined directory as ROT13 version of original,<br><br>
+        -and VIRUS now shows up as IVEHF.<br><br>
+        -
+        <canvas id="virus1" width="700" height="50"></canvas>
+        <script>
+            var virus1 = document.getElementById('virus1');
+            var virus1_ctx = virus1.getContext('2d');
+                virus1_ctx.rect(0,0, virus1.width, virus1.height);
+                var x = 15;
+                var y = 30;
+                virus1.addEventListener('click', virus1h, false);
+
+            var virus1_grd = virus1_ctx.createLinearGradient(0,0,0, virus1.height / 2);
+            virus1_grd.addColorStop(0, '#FFF5F5');
+            virus1_grd.addColorStop(1, '#FFF5F5');
+            virus1_ctx.fillStyle = virus1_grd;
+            virus1_ctx.fill();
+
+            virus1_ctx.font = '16pt Arial';
+            virus1_ctx.lineWidth = 1;
+            virus1_ctx.strokeStyle = 'black';
+            virus1_ctx.strokeText('', x, y);
+
+            function virus1h(e) {
+                virus1_grd = virus1_ctx.createLinearGradient(0,0,0, virus1.height / 2);
+                    virus1_grd.addColorStop(0, '#CC0000');
+                    virus1_grd.addColorStop(1, '#442222');
+                    virus1_ctx.fillStyle = virus1_grd;
+                    virus1_ctx.fill();
+                    virus1_ctx.font = '16pt Arial';
+                    virus1_ctx.lineWidth = 1;
+                    virus1_ctx.fillStyle = 'white';
+                    virus1_ctx.fillText('What would the quarantined version of the text "VIRUSIVEHF" look like?', x, y);
+            }
+        </script>  
+        <br><br>-
+        <canvas id="virus2" width="200" height="50"></canvas>
+        <script>
+            var virus2 = document.getElementById('virus2');
+            var virus2_ctx = virus2.getContext('2d');
+                virus2_ctx.rect(0,0, virus2.width, virus2.height);
+                var x = 15;
+                var y = 30;
+                virus2.addEventListener('click', virus2h, false);
+
+            var virus2_grd = virus2_ctx.createLinearGradient(0,0,0, virus2.height / 2);
+            virus2_grd.addColorStop(0, '#FFF5F5');
+            virus2_grd.addColorStop(1, '#FFF5F5');
+            virus2_ctx.fillStyle = virus2_grd;
+            virus2_ctx.fill();
+
+            virus2_ctx.font = '12pt Arial';
+            virus2_ctx.lineWidth = 1;
+            virus2_ctx.strokeStyle = 'black';
+            virus2_ctx.strokeText('', x, y);
+
+            function virus2h(e) {
+                virus2_grd = virus2_ctx.createLinearGradient(0,0,0, virus2.height / 2);
+                    virus2_grd.addColorStop(0, '#CC0000');
+                    virus2_grd.addColorStop(1, '#442222');
+                    virus2_ctx.fillStyle = virus2_grd;
+                    virus2_ctx.fill();
+                    virus2_ctx.font = '18pt Arial';
+                    virus2_ctx.lineWidth = 1;
+                    virus2_ctx.fillStyle = 'white';
+                    virus2_ctx.fillText('"IVEHFVIRUS"!', x, y);
+            }
+        </script>  
+        <br><br>
+    </div>
+
+    <div class="step slide" data-x="8400" data-y="0" data-rotate-x="225" data-scale="1.61051">
+        <q>Ok, does anybody actually quarantine like this?</q><br><br>
+        -<a href="http://kc.mcafee.com/corporate/index?page=content&id=KB72755">McAfee KB72755</a> and <a href="http://www.forensicfocus.com/Forums/viewtopic/printertopic=1/t=9155/start=0/postdays=0/postorder=asc/vote=viewresult/">Forensic Focus Article</a><br><br>
+        -To Un-Quarantine a file, first unzip the .7z formatted .bup file<br><br>
+        -Next XOR the File_0 file with the key of \x6a<br><br>
+        -.7z file is archive format, not compressed (raw data often appears plaintext)<br><br>
+        -XOR is just as symmetric as ROT13, lets explain bit by bit...
+    </div>
+
+    <div class="step slide" data-x="10600" data-y="0" data-rotate-x="270" data-scale="1.771561">
+        Binary Logic Behind Bitwise Exclusive Or (XOR)<br><br>
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col"></th>
+                    <th scope="col">C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>                    
+                    <td>0</td>
+                </tr>
+                 <tr>
+                    <th scope="row"></th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td></td> 
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <th scope="row"></th>
+                    <td>1</td>
+                    <td>0</td>
+                    <td></td> 
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td> 
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>                                              
+    </div>
+
+    <div class="step slide" data-x="13100" data-y="0" data-rotate-x="325" data-scale="1.9487171">
+        <q>XOR Logic Gate Symbol</q>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAyCAYAAACqNX6+AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2QcRFBsVfKQvcAAABD1JREFUeJzt22+IVUUYx/HP+iLXXMOCSCsIw3oXioZblBBSEQlRJvQPioKoF0X1JgoJCYxAohArigiDoILAoIiwKCzCoOgPlH9ozY1IKgsl/6ztenN7Med25t69t2S9Z87dvecLA3N+y955Zp5zzpx55hkqKioqKioqKppYgRrGs3Jvpq+NtJMt+7EH2/AW1uFGLCi6c1OV++WDN4pB9OFNnXNKu/IHXsOtGCi6o1OJTfJB2oVZOBXfKt4p9XIos2NpwX2dEgxgt3xwHsv0xRiL9OWT+O1+nINFWIlH8AZ2au+cj3DFpHoyjVgpH5A/cWamr4/0bcLrrFOcK8xbn+C4iY7ZjIUdbG/KsUU+GBsybQ72Rfr1BbV9AZ7HEY1OGcFDmFFQu13NMvlAHMbcTH840j8t2Ib5eBl/a3TMx9nfeo735YNwX6YN4ECkX5TAjkFs1+iUn4WbpqdYJR+A7yJ9Q6Q/l8iW/qZ2x3EU1yVq/6RI9Xlan/RnpekWuENwRL39UaxO2P6kSOGIvVG9qMm9HcuFG6Hefs0UeVI6wdXyju+M9Ccj/aUS7FomhGLqNhwR5pppz0zhK6ve8XmZflmk7SrHNIMaP4336ZG1ylZ5p2/ItJnylftxnFGKZeFVFQdFv8QpJdmSbIH0TVSvx5dGsSOr9ykv7vQ21kTXS/BESbYk4075Hfh6pL8S6fekN+tf+jRGFo7jqjIMSfWEfB/V472Loah+fiJbWjGO2/Frdt2HF6X9HEc6h+yP6vPb6GcnsqUdv8mjCYQb59GSbCmc+fLXwYFIvznSN5dgVyve1biSn5a7kf3yTo5F+jWRvqUEu1qxwMQocVFlAj0Zhu5mUjnk9Kh+JKrPjeojiWz5P54VtpzhL+Fjo6+gMoFUDokH/mBUb+eosliNa6Pr9RhOaUAqh8Sr8F/a6HsT2dKOecLTUWdYiLclJZVDLozqw230H9OY0pIZeBVnZdfjuFt4ZSU3JAWLo/qeqL4oqu9OZEsr1uDK6PppfFiSLUnYqnuDi7dpzFL5WonBxRScSPh9qPW/Fs6lwmupp8Lv3bpBdbnGXcNRXFKCHSdEilVqXFJv4a7Q+NTWhJzgriWlMw5hdppuIWQ3ximtNWEe6QnapQFtjPQXEtkyR0iai2+GMSHA2TPEiXIPZFpzotySBHasED63Y2f8rseSsAflnR/ROpX084JtWCiE9Ztfk1+ZpmH1/yLeEt2YaacJB2vq+k0FtX2xcHjnmEZHHBP2y6f1OqMV8XGEw/KQxFOR/oXOHkdYKnxKD5n4RIzjMz2Yy0uYI36QD8S6TG8+sDOZJIIBnCe8DlfhcbyjMQuyuWzHLTrr/CnFJo0r8NnSH2mr4QMh56qnN+HiQ581YeWb6tDnUWHeelD5CRNdQfOx6HrGxlqdG/SD+EkIAL6HZ3CX8OnccxN1RUVFRUVFRRfzDz6DZd1W5Ff4AAAAAElFTkSuQmCC" alt="XOR Gate" height="400" width="600"> <br>
+    </div>     
+       
+    <div class="step slide" data-x="13100" data-y="2000" data-rotate-x="325" data-scale="1.9487171">
+        <q>1-bit Adder with Carry-bit Output</q>
+        <img src="data:image/png;base64,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" alt="Adder" height="400" width="600"><br>
+    </div>
+
+    <div class="step slide" data-x="13100" data-y="4000" data-rotate-x="325" data-scale="1.9487171">
+        <q>Full 1-bit Adder</q>
+        This allows us to do things like cascade 8 of these to add bytes<br>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiYAAAFeCAYAAACxV9R3AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH2AsGDg0g5FwpoAAAIABJREFUeJzt3Xl4FEX+x/F3CISbKF4gh6KI6HoLiAcq4i4qiiteKMqiIl54Ld7K4rL+BF3QVdcLL1AUhBVvBDkEF0FUUHGVWwTClUtCLiAk/fujZpLKkEx6kpn09OTzep5+0t3TNfOdnsnMd6qqq0BERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERExFvJXgcgNZIM9ASOBRxgd2ARERHxpSSvA5BS7YB9gZ+BYpdl3gKuqWD/BmALkBFYNlewnhlY3D6WiIhIzCkxiQ+nAXOARkA28A7wNvB1FeVWAEfW8LEzrSUr8HdbyP5gQrMVKKnh44mIiEicuxPTFBO6LAL+FKbcHzGJQ0VlY7HsBtYDC4BJwJPADZjEar8angMRERHVmMSJ/YA3gN5ASgW3fwTcjmmiqcjhwCDgHkytSznnn38+ycnJbNu2ja1bt5KRkcHOnTujEniITGA5sBRYHFh+jcUDiYhIYlJiEl+aAZcB1wJnA/Ws23YAt2CaeSpTH9Pn5O9A++DOgw8+mMmTJ9OjR4/SA/Py8sjIyCA9PZ2srCwyMzPJzMws3RfczsrKYuvWreTk5FT3OaVjEpQFwCfAL9W9IxERSXxKTOLXscDfMImKbRym6SdclUcT4FHgrwSuvKpfvz7jx49nwIAB1QomPz+fDRs2kJaWxubNm1m/fj2//fYby5cvZ+XKlfz+++9u7+pX4GNMkvIluopIRETEV3oBK9m770lLF2XPxdRYOIBTr14958UXX3RiIT093Zk/f77z4osvOtddd51z9NFHO/Xq1auqz0oW8DTQObqnTERERGKpGTCR8l/q/wPauCh7OLAuWC4pKcmZMGFCTJKTUNu3b3dmzZrljBgxwunatauTlJRUWYJSAswDrgIaRvfUiYiISKw8Svkv9JVAqotybTGXFjuAk5KS4syZM6dWkhPb5s2bnVdeecXp27ev06RJk8qSlK2YJqim0T55IiIiEn1DMTUMwS/yOVR8JU+otsDGYLnU1FRnzZo1tZ6cBOXm5jrjxo1zTjrppMoSlG3ArZgO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LTVxM3BvYP0jzCWb4m/NMVe7BJ2Au74TR+C+b1RXwo83IiIiAbMpq25+oIpjbY9UsC94P273V3VbTeiqHHGrJlfl2P8/lS0L0GWyIiKuHUHZzMJFmAm+wmkKvEJkCYgSE4lnNUlMWgNLqTwpWQa0jWawIiJ+E+mU4KuBizE98+tjOunNAi7HfKDWxzStHIv5Ul5F1TMQi9QVW4DTMKO0Flj7izBXyHTHXFYrIiIROpryV+mEW9ax9xU2oBoT8adoTeJ3m3UfkQ6qJiKSsKo7wNovwKlAT8zEYKcCHYBmwC5gI6aj7PuYTp/Vmf9DJJHZ43/EItkWEfGlmo78+kVgqY7KOviF6/inToEiIiIJLNI+JiIiIiIxo8RERERE4oYSExEREYkbSkxEREQkbigxERERkbihxERERETihhITERERiRtKTERERCRuKDERERGRuKHEREREROKGEhMRERGJG0pMREREJG4oMREREZG4ocRERERE4oYSExEREYkbSkxEREQkbigxERERkbihxERERETihhITERERiRtKTERERCRuKDERERGRuKHEREREROKGEhMRERGJG0pMREREJG4oMREREZG4ocRERERE4oYSExEREYkb9b0OQERqrBvQz+sgwsgF8gLLemAFkOZpRCISt5SYiPhbC2A+0MjrQCKUC6wEvgVmA/OAbC8DEpH4oKYcEX87BP8lJQDNgS7ALcB7QDrwNTAUaOlhXCLiMdWYiCSQ+++/3+sQysnJySEvL4+8vDx27NjBhg0bWLduHcXFxaGHJgOnBJYxwEfAM8BXtRuxiHhNiYlIgkhNTWX06NFeh1GlXbt2sXr1apYsWcLs2bOZM2cOW7ZssQ9pCFweWOYAfwf+60GoIiKeuQVwAks0PwAfsO737Sjer3gnlbLX1AlsV4f9nvukBvEcG7yf1NRUx69+/PFH5/7773cOPvhg+9zayydAhxqcJxHxCfUxERHPHXfccYwePZoNGzbw6aef0rt379BD+gD/A+5DNb0iCU2JiYjEjeTkZC644AJmzJjBokWLOP/88+2bmwBPAIuAjp4EKCIxp8REROJS9+7dmT59OvPnz+eoo46yb+qCucz4z95EJiKxpMREROLamWeeyQ8//MDIkSNp1Kj0yuh9gGmYGpRkz4ITkahTYiIicS8lJYXhw4fz1Vdf0aFDaR/YJEyfk3eBFM+CE5GoUmIiIr5x0kknsXTpUs477zx796WYq3aaehOViESTEhMR8ZV99tmHjz/+mGuuucbe/Ufgc0wHWRHxMSUmIuI79evX580332To0KH27tOASajPiYivKTEREV9KSkriueee45ZbbrF39wWe8ygkEYkCJSYi4mvPPfccffv2tXfdAtzoUTgiUkNKTETE15KTk5k0aRKnnHKKvftfwFGVFBGROKbERER8r0mTJrz//vsccMABpbswlxE3qryUiMQjJSYikhBat27NG2+8QVJSUnDXscBDHoYkItWgxEREEkafPn2466677F33olmJRXxFiYmIJJTHHnuM9u3bBzcbAc94GI6IREiJiYgklCZNmjBmzBh710XAWR6FIyIRUmIiIgnn8ssvp2fPnvauB7yKRUQiU9/rAESEPwHZ1SyrUU4r8cQTT9CtW7fgZm/gROB77yISETdUYyLivQbAvtVcWngQry907dqVXr16BTeTMB1hRSTOKTERkYT14IMP2psXo0ROJO6pKUfEG/8BvonC/XQEJkfhfhJSr169OO6441i2bBmYQdf6AeM9DUpEwlJiIuKNjMBSU7ujcB8J7ZprruG+++4Lbl6NEhORuKamHBFJaFdffTX16pV+1J0DHBDmcBHxmBITEUlobdq0oXv37sHNZOCPHoYjIlVQYiIiCe/ss88ut+lNFCLihhITEUl4IYlJz0oOE5E4oMRERBLe6aefTv36pX39OwIHexiOiIShxEREEl6TJk049NBD7V1/8CgUEamCEhMRqRM6d+5sbx7hVRwiEp4SExGpEzp16mRvHuVVHCISnhITEakTQppy2nsUhohUQYmJiNQJ++67r73Z0qs4RCQ8DUkvInVCs2bN7M3jgVk1vMtHgMU1vA8RCaHERETqhObNm5fbBM6t4V3+q4blRaQCSkxEpE5o2LCh1yHEwjHAw0AqZpbp3zCTQ6YDWd6FJVJ9SkxEpE7Iy8uzN7cCI6pxN38D2kQloJprDHwFtAhsnx9y+27KkpQt1vrWwN9M628mUBD7kEWqpsREROqE3NxcezMNGFeNuxlK/CQmyUBKmNtTMLG2AU50cX8FlCUrGZQlLJmYZGYLsAHYBGyvdtQiVVBiIiJ1QkiNSW5lx/lIHvAn4Mso3V8TzGXUbi6lzsckKeuB5cDKwLICk8SIVJsSExGpEzIz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" alt="Full Adder" height="400" width="600"><br>
+    </div>        
+
+    <div class="step slide" data-x="15700" data-y="0" data-rotate-x="360" data-scale="2.14358881">
+        Input, XOR KEY, and Output Context<br><br>
+        <table class="table2">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">Input</th>
+                    <th scope="col">Key</th>
+                    <th scope="col"></th>
+                    <th scope="col">Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>                    
+                    <td>0</td>
+                </tr>
+                 <tr>
+                    <th scope="row"></th>
+                    <td>0</td>
+                    <td>1</td>
+                    <td></td> 
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <th scope="row"></th>
+                    <td>1</td>
+                    <td>0</td>
+                    <td></td> 
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td></td> 
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>                                              
+    </div>
+
+    <div class="step slide" data-x="18600" data-y="0" data-rotate-x="405" data-scale="2.357947691">
+        Enumerate the Possibilities<br><br>
+        <canvas id="input" width="100" height="50"></canvas>
+        <canvas id="key" width="100" height="50"></canvas> 
+        <canvas id="empty" width="50" height="50"></canvas>      
+        <canvas id="output" width="100" height="50"></canvas>
+        <br>
+        <canvas id="input1" width="100" height="50"></canvas>
+        <canvas id="key1" width="100" height="50"></canvas> 
+        <canvas id="empty" width="50" height="50"></canvas>      
+        <canvas id="output1" width="100" height="50"></canvas>
+        <br>
+        <canvas id="input2" width="100" height="50"></canvas>
+        <canvas id="key2" width="100" height="50"></canvas> 
+        <canvas id="empty" width="50" height="50"></canvas>      
+        <canvas id="output2" width="100" height="50"></canvas>
+        <br>
+        <canvas id="input3" width="100" height="50"></canvas>
+        <canvas id="key3" width="100" height="50"></canvas> 
+        <canvas id="empty" width="50" height="50"></canvas>      
+        <canvas id="output3" width="100" height="50"></canvas>
+        <br>
+        <canvas id="input4" width="100" height="50"></canvas>
+        <canvas id="key4" width="100" height="50"></canvas>
+        <canvas id="empty" width="50" height="50"></canvas>      
+        <canvas id="output4" width="100" height="50"></canvas>
+        <br>
+        XOR Key of 0 <br>
+        <canvas id="example_1" width="260" height="50"></canvas>
+        <canvas id="example_1a" width="240" height="50"></canvas>
+        <br>
+        <canvas id="example_2" width="260" height="50"></canvas>
+        <canvas id="example_2a" width="240" height="50"></canvas>
+        <br>
+        XOR Key of 1<br>
+        <canvas id="example_3" width="260" height="50"></canvas>
+        <canvas id="example_3a" width="240" height="50"></canvas>          
+        <br>
+        <canvas id="example_4" width="260" height="50"></canvas>
+        <canvas id="example_4a" width="240" height="50"></canvas>
+
+   </div>
+
+    <div class="step slide" data-x="21800" data-y="0" data-rotate-x="450" data-scale="2.5937424601">
+        <q>It Can't Be That Easy, Right?</q><br><br>
+        -Correct<br><br>
+        -Many signatures don't detect once you introduce non-printables (especially null byte)<br><br>
+        -7zip headers/metadata introduce nonprintables and null bytes :( <br><br>
+        -Many signatures only search a limited depth into file<br><br>
+        -As the nuetered virus data is at end of .7z file, the repetitions eventually stop
+    </div>   
+
+    <div class="step slide" data-x="25400" data-y="0" data-rotate-x="495" data-scale="2.85311670611">
+        <q>Lame, does anything work</q><br><br>
+        -Yes<br><br>
+        -Exibit A: Worm.VBS.IRC.Alba (Clam) (Yes, it's a ClamAV sig)<br><br>
+        -Contents: ript]'+Char($D)+Char($A)+<br>
+'n0=on 1:JOIN:#: if ( $me != $nick )'<br>
+'{ /dcc send $nick c:\mirc\download\alba.exe }'+C7MA)<br>
+    </div>  
+
+    <div class="step slide" data-x="29400" data-y="0" data-rotate-x="540" data-scale="3.138428376721">
+        <q>Cool, what if I'm too lazy to make one of these?</q><br><br>
+        -After 2 whole years, I made an update to HIVsneeze.pl<br><br>
+        -Syntax: hivsneeze.pl --tumor<br><br>
+        -It tumorizes every signature in ClamAV database<br><br>
+        -Not as cool as it sounds, only about 10 or so sigs work<br><br>
+        -I don't have (nor do I want) access to actual McAfee signatures
+    </div>     
+
+    <div class="step slide" data-x="33700" data-y="0" data-rotate-x="585" data-scale="3.4522712143931">
+        <q>PoC or GTFO</q><br><br>
+        -OK...
+    </div>       
+
+    <div class="step slide" data-x="38400" data-y="0" data-rotate-x="630" data-scale="3.79749833583241">
+        <q>Conclusions</q><br><br>
+        -I find it interesting that introducing a null-byte into arbitrary locations kills many detections<br><br>
+        -It also seems that if the badness is deep enough into the file, detections again go down<br><br>
+        -Why I REALLY DON'T CARE about pushing this farther (DoS conditions or worse)<br><br>
+    </div>          
+
+    <div class="step" data-x="24000" data-y="0" data-scale="27" data-rotate-y="15" data-rotate-z="15" data-rotate-x="-15">
+    </div>
+
+</div>  
+
+<script>
+//  Supporting JS for the slides
+//  When I actually learn js, maybe the code will start
+//  looking better
+
+// Position of text in most canvas's and some color stuff
+var x = 5;
+var y = 30;
+var R = 255;
+var G = 128;
+var B = 128;
+
+//Variables for the different colors I'm using
+var light_red = '#FF8888';
+var red = '#FF0000';
+var pink = '#FFF5F5';
+var white = '#FFFFFF';
+var green = '#00FF00';
+var dark_green = '#00AA00';
+var light_blue = '#EEEEFF';
+var blue = '#8888FF';
+
+//Get Elements by ID
+var input = document.getElementById('input');
+var key = document.getElementById('key');
+var empty = document.getElementById('empty');
+var output = document.getElementById('output');
+var input1 = document.getElementById('input1');
+var key1 = document.getElementById('key1');
+var output1 = document.getElementById('output1');
+var input2 = document.getElementById('input2');
+var key2 = document.getElementById('key2');
+var output2 = document.getElementById('output2');
+var input3 = document.getElementById('input3');
+var key3 = document.getElementById('key3');
+var output3 = document.getElementById('output3');
+var input4 = document.getElementById('input4');
+var key4 = document.getElementById('key4');
+var output4 = document.getElementById('output4');
+var example_1 = document.getElementById('example_1');
+var example_1a = document.getElementById('example_1a');
+var example_2 = document.getElementById('example_2');
+var example_2a = document.getElementById('example_2a');
+var example_3 = document.getElementById('example_3');
+var example_3a = document.getElementById('example_3a');
+var example_4 = document.getElementById('example_4');
+var example_4a = document.getElementById('example_4a');
+
+//Get the 2D contexts for all canvi
+var input_ctx = input.getContext('2d');
+var key_ctx = key.getContext('2d');
+var empty_ctx = empty.getContext('2d');
+var output_ctx = output.getContext('2d');
+var input1_ctx = input1.getContext('2d');
+var key1_ctx = key1.getContext('2d');
+var output1_ctx = output1.getContext('2d');
+var input2_ctx = input2.getContext('2d');
+var key2_ctx = key2.getContext('2d');
+var output2_ctx = output2.getContext('2d');
+var input3_ctx = input3.getContext('2d');
+var key3_ctx = key3.getContext('2d');
+var output3_ctx = output3.getContext('2d');
+var input4_ctx = input4.getContext('2d');
+var key4_ctx = key4.getContext('2d');
+var output4_ctx = output4.getContext('2d');
+var example_1ctx = example_1.getContext('2d');
+var example_1actx = example_1a.getContext('2d');
+var example_2ctx = example_2.getContext('2d');
+var example_2actx = example_2a.getContext('2d');
+var example_3ctx = example_3.getContext('2d');
+var example_3actx = example_3a.getContext('2d');
+var example_4ctx = example_4.getContext('2d');
+var example_4actx = example_4a.getContext('2d');
+
+//Set the dimmensions to rectange with the height and width
+input_ctx.rect(0,0, input.width, input.height);
+key_ctx.rect(0,0, key.width, key.height);
+empty_ctx.rect(0,0, empty.width, empty.height);
+output_ctx.rect(0,0, output.width, output.height);
+input1_ctx.rect(0,0, input1.width, input1.height);
+key1_ctx.rect(0,0, key1.width, key1.height);
+output1_ctx.rect(0,0, output1.width, output1.height);
+input2_ctx.rect(0,0, input2.width, input2.height);
+key2_ctx.rect(0,0, key2.width, key2.height);
+output2_ctx.rect(0,0, output2.width, output2.height);
+input3_ctx.rect(0,0, input3.width, input3.height);
+key3_ctx.rect(0,0, key3.width, key3.height);
+output3_ctx.rect(0,0, output3.width, output3.height);
+input4_ctx.rect(0,0, input4.width, input4.height);
+key4_ctx.rect(0,0, key4.width, key4.height);
+output4_ctx.rect(0,0, output4.width, output4.height);
+example_1ctx.rect(0,0, example_1.width, example_1.height);
+example_1actx.rect(0,0, example_1a.width, example_1a.height);
+example_2ctx.rect(0,0, example_2.width, example_2.height);
+example_2actx.rect(0,0, example_2a.width, example_2a.height);
+example_3ctx.rect(0,0, example_3.width, example_3.height);
+example_3actx.rect(0,0, example_3a.width, example_3a.height);
+example_4ctx.rect(0,0, example_4.width, example_4.height);
+example_4actx.rect(0,0, example_4a.width, example_4a.height);
+
+//Set Gradient, text/font properties, and text values for each element
+var input_grd = input_ctx.createLinearGradient(0,0,0, input.height / 2);
+input_grd.addColorStop(0, light_red);
+input_grd.addColorStop(1, red);
+input_ctx.fillStyle = input_grd;
+input_ctx.fill();
+input_ctx.font = '12pt Arial';
+input_ctx.lineWidth = 1;
+input_ctx.strokeStyle = 'black';
+input_ctx.strokeText('Input', x, y);
+
+var key_grd = key_ctx.createLinearGradient(0,0,0, key.height / 2);
+key_grd.addColorStop(0, light_red);
+key_grd.addColorStop(1, red);
+key_ctx.fillStyle = key_grd;
+key_ctx.fill();
+key_ctx.font = '12pt Arial';
+key_ctx.lineWidth = 1;
+key_ctx.strokeStyle = 'black';
+key_ctx.strokeText('Key', x, y);
+
+empty_ctx.fillStyle= pink;
+empty_ctx.fill();
+
+var output_grd = output_ctx.createLinearGradient(0,0,0, output.height / 2);
+output_grd.addColorStop(0, light_red);
+output_grd.addColorStop(1, red);
+output_ctx.fillStyle = output_grd;
+output_ctx.fill();
+output_ctx.font = '12pt Arial';
+output_ctx.lineWidth = 1;
+output_ctx.strokeStyle = 'black';
+output_ctx.strokeText('Output', x, y);
+
+var input1_grd = input1_ctx.createLinearGradient(0,0,0, input1.height / 2);
+input1_grd.addColorStop(0, white);
+input1_grd.addColorStop(1, 'rgb('+R+','+G+','+B+')');
+input1_ctx.fillStyle = input1_grd;
+input1_ctx.fill();
+input1_ctx.font = '12pt Arial';
+input1_ctx.lineWidth = 1;
+input1_ctx.strokeStyle = 'black';
+input1_ctx.strokeText('0', x, y);
+
+var key1_grd = key1_ctx.createLinearGradient(0,0,0, key1.height / 2);
+key1_grd.addColorStop(0, white);
+key1_grd.addColorStop(1, light_red);
+key1_ctx.fillStyle = key1_grd;
+key1_ctx.fill();
+key1_ctx.font = '12pt Arial';
+key1_ctx.lineWidth = 1;
+key1_ctx.strokeStyle = 'black';
+key1_ctx.strokeText('0', x, y);
+
+var output1_grd = output1_ctx.createLinearGradient(0,0,0, output1.height / 2);
+output1_grd.addColorStop(0, white);
+output1_grd.addColorStop(1, light_red);
+output1_ctx.fillStyle = output1_grd;
+output1_ctx.fill();
+output1_ctx.font = '12pt Arial';
+output1_ctx.lineWidth = 1;
+output1_ctx.strokeStyle = 'black';
+output1_ctx.strokeText('0', x, y);
+
+var input2_grd = input2_ctx.createLinearGradient(0,0,0, input2.height / 2);
+input2_grd.addColorStop(0, white);
+input2_grd.addColorStop(1, 'rgb('+R+','+G+','+B+')');
+input2_ctx.fillStyle = input2_grd;
+input2_ctx.fill();
+input2_ctx.font = '12pt Arial';
+input2_ctx.lineWidth = 1;
+input2_ctx.strokeStyle = 'black';
+input2_ctx.strokeText('0', x, y);
+
+var key2_grd = key2_ctx.createLinearGradient(0,0,0, key2.height / 2);
+key2_grd.addColorStop(0, white);
+key2_grd.addColorStop(1, light_red);
+key2_ctx.fillStyle = key2_grd;
+key2_ctx.fill();
+key2_ctx.font = '12pt Arial';
+key2_ctx.lineWidth = 1;
+key2_ctx.strokeStyle = 'black';
+key2_ctx.strokeText('1', x, y);
+
+var output2_grd = output2_ctx.createLinearGradient(0,0,0, output2.height / 2);
+output2_grd.addColorStop(0, white);
+output2_grd.addColorStop(1, light_red);
+output2_ctx.fillStyle = output2_grd;
+output2_ctx.fill();
+output2_ctx.font = '12pt Arial';
+output2_ctx.lineWidth = 1;
+output2_ctx.strokeStyle = 'black';
+output2_ctx.strokeText('1', x, y);
+
+var input3_grd = input3_ctx.createLinearGradient(0,0,0, input3.height / 2);
+input3_grd.addColorStop(0, white);
+input3_grd.addColorStop(1, 'rgb('+R+','+G+','+B+')');
+input3_ctx.fillStyle = input3_grd;
+input3_ctx.fill();
+input3_ctx.font = '12pt Arial';
+input3_ctx.lineWidth = 1;
+input3_ctx.strokeStyle = 'black';
+input3_ctx.strokeText('1', x, y);    
+
+var key3_grd = key3_ctx.createLinearGradient(0,0,0, key3.height / 2);
+key3_grd.addColorStop(0, white);
+key3_grd.addColorStop(1, light_red);
+key3_ctx.fillStyle = key3_grd;
+key3_ctx.fill();
+key3_ctx.font = '12pt Arial';
+key3_ctx.lineWidth = 1;
+key3_ctx.strokeStyle = 'black';
+key3_ctx.strokeText('0', x, y);
+
+var output3_grd = output3_ctx.createLinearGradient(0,0,0, output3.height / 2);
+output3_grd.addColorStop(0, white);
+output3_grd.addColorStop(1, light_red);
+output3_ctx.fillStyle = output3_grd;
+output3_ctx.fill();
+output3_ctx.font = '12pt Arial';
+output3_ctx.lineWidth = 1;
+output3_ctx.strokeStyle = 'black';
+output3_ctx.strokeText('1', x, y);
+
+var input4_grd = input4_ctx.createLinearGradient(0,0,0, input4.height / 2);
+input4_grd.addColorStop(0, white);
+input4_grd.addColorStop(1, 'rgb('+R+','+G+','+B+')');
+input4_ctx.fillStyle = input4_grd;
+input4_ctx.fill();
+input4_ctx.font = '12pt Arial';
+input4_ctx.lineWidth = 1;
+input4_ctx.strokeStyle = 'black';
+input4_ctx.strokeText('1', x, y);
+
+var key4_grd = key4_ctx.createLinearGradient(0,0,0, key4.height / 2);
+key4_grd.addColorStop(0, white);
+key4_grd.addColorStop(1, light_red);
+key4_ctx.fillStyle = key4_grd;
+key4_ctx.fill();
+key4_ctx.font = '12pt Arial';
+key4_ctx.lineWidth = 1;
+key4_ctx.strokeStyle = 'black';
+key4_ctx.strokeText('1', x, y);
+
+var output4_grd = output4_ctx.createLinearGradient(0,0,0, output4.height / 2);
+output4_grd.addColorStop(0, white);
+output4_grd.addColorStop(1, light_red);
+output4_ctx.fillStyle = output4_grd;
+output4_ctx.fill();
+output4_ctx.font = '12pt Arial';
+output4_ctx.lineWidth = 1;
+output4_ctx.strokeStyle = 'black';
+output4_ctx.strokeText('0', x, y);
+
+var example_1grd = example_1ctx.createLinearGradient(0,0,0, example_1.height / 2);
+example_1grd.addColorStop(0, green);
+example_1grd.addColorStop(1, dark_green);
+example_1ctx.fillStyle = example_1grd;
+example_1ctx.fill();
+example_1ctx.font = '12pt Arial';
+example_1ctx.lineWidth = 1;
+example_1ctx.strokeStyle = 'black';
+example_1ctx.strokeText('input 0 xor with key 0 = output 0 ->', x, y);
+
+var example_1agrd = example_1actx.createLinearGradient(0,0,0, example_1a.height / 2);
+example_1agrd.addColorStop(0, green);
+example_1agrd.addColorStop(1, dark_green);
+example_1actx.fillStyle = example_1agrd;
+example_1actx.fill();
+example_1actx.font = '12pt Arial';
+example_1actx.lineWidth = 1;
+example_1actx.strokeStyle = 'black';
+example_1actx.strokeText('input 0 xor with key 0 = output 0', x, y);
+
+var example_2grd = example_2ctx.createLinearGradient(0,0,0, example_2.height / 2);
+example_2grd.addColorStop(0, green);
+example_2grd.addColorStop(1, dark_green);
+example_2ctx.fillStyle = example_2grd;
+example_2ctx.fill();
+example_2ctx.font = '12pt Arial';
+example_2ctx.lineWidth = 1;
+example_2ctx.strokeStyle = 'black';
+example_2ctx.strokeText('input 1 xor with key 0 = output 1 ->', x, y);
+
+var example_2agrd = example_2actx.createLinearGradient(0,0,0, example_2a.height / 2);
+example_2agrd.addColorStop(0, green);
+example_2agrd.addColorStop(1, dark_green);
+example_2actx.fillStyle = example_2agrd;
+example_2actx.fill();
+example_2actx.font = '12pt Arial';
+example_2actx.lineWidth = 1;
+example_2actx.strokeStyle = 'black';
+example_2actx.strokeText('input 1 xor with key 0 = output 1', x, y);
+
+var example_3grd = example_3ctx.createLinearGradient(0,0,0, example_3.height / 2);
+example_3grd.addColorStop(0, green);
+example_3grd.addColorStop(1, dark_green);
+example_3ctx.fillStyle = example_3grd;
+example_3ctx.fill();
+example_3ctx.font = '12pt Arial';
+example_3ctx.lineWidth = 1;
+example_3ctx.strokeStyle = 'black';
+example_3ctx.strokeText('input 0 xor with key 1 = output 1 ->', x, y);
+
+var example_3agrd = example_3actx.createLinearGradient(0,0,0, example_3a.height / 2);
+example_3agrd.addColorStop(0, green);
+example_3agrd.addColorStop(1, dark_green);
+example_3actx.fillStyle = example_3agrd;
+example_3actx.fill();
+example_3actx.font = '12pt Arial';
+example_3actx.lineWidth = 1;
+example_3actx.strokeStyle = 'black';
+example_3actx.strokeText('input 1 xor with key 1 = output 0', x, y);
+
+var example_4grd = example_4ctx.createLinearGradient(0,0,0, example_4.height / 2);
+example_4grd.addColorStop(0, green);
+example_4grd.addColorStop(1, dark_green);
+example_4ctx.fillStyle = example_4grd;
+example_4ctx.fill();
+example_4ctx.font = '12pt Arial';
+example_4ctx.lineWidth = 1;
+example_4ctx.strokeStyle = 'black';
+example_4ctx.strokeText('input 1 xor with key 1 = output 0 ->', x, y);
+
+var example_4agrd = example_4actx.createLinearGradient(0,0,0, example_4a.height / 2);
+example_4agrd.addColorStop(0, green);
+example_4agrd.addColorStop(1, dark_green);
+example_4actx.fillStyle = example_4agrd;
+example_4actx.fill();
+example_4actx.font = '12pt Arial';
+example_4actx.lineWidth = 1;
+example_4actx.strokeStyle = 'black';
+example_4actx.strokeText('input 0 xor with key 1 = output 1', x, y);
+
+//Add event listeners for our buttons that do stuff
+example_1.addEventListener('click', clickReporter1, false);
+example_1a.addEventListener('click', clickReporter1, false); 
+example_2.addEventListener('click', clickReporter3, false); 
+example_2a.addEventListener('click', clickReporter3, false);  
+example_3.addEventListener('click', clickReporter2, false);
+example_3a.addEventListener('click', clickReporter4, false);
+example_4.addEventListener('click', clickReporter4, false);
+example_4a.addEventListener('click', clickReporter2, false);
+
+
+//Click Reporters for each row
+//Good for row 1
+function clickReporter1(e) {
+    default_colors();
+    //Light up top row
+    input1_grd = input1_ctx.createLinearGradient(0,0,0, input1.height / 2);
+        input1_grd.addColorStop(0, light_blue);
+        input1_grd.addColorStop(1, blue);
+        input1_ctx.fillStyle = input1_grd;
+        input1_ctx.fill();
+    input1_ctx.strokeText('0',5,30);
+    key1_grd = key1_ctx.createLinearGradient(0,0,0, key1.height / 2);
+        key1_grd.addColorStop(0, light_blue);
+        key1_grd.addColorStop(1, blue);
+        key1_ctx.fillStyle = key1_grd;
+        key1_ctx.fill();
+    key1_ctx.strokeText('0',5,30);
+    output1_grd = output1_ctx.createLinearGradient(0,0,0, output1.height / 2);
+        output1_grd.addColorStop(0, light_blue);
+        output1_grd.addColorStop(1, blue);
+        output1_ctx.fillStyle = output1_grd;
+        output1_ctx.fill();
+    output1_ctx.strokeText('0',5,30);  
+                                                           
+}
+function clickReporter2(e) {
+    default_colors();  
+    //Default row 2     
+    input2_grd = input2_ctx.createLinearGradient(0,0,0, input2.height / 2);
+        input2_grd.addColorStop(0, light_blue);
+        input2_grd.addColorStop(1, blue);
+        input2_ctx.fillStyle = input2_grd;
+        input2_ctx.fill();
+    input2_ctx.strokeText('0',5,30);
+    key2_grd = key2_ctx.createLinearGradient(0,0,0, key2.height / 2);
+        key2_grd.addColorStop(0, light_blue);
+        key2_grd.addColorStop(1, blue);
+        key2_ctx.fillStyle = key2_grd;
+        key2_ctx.fill();
+    key2_ctx.strokeText('1',5,30);
+    output2_grd = output2_ctx.createLinearGradient(0,0,0, output2.height / 2);
+        output2_grd.addColorStop(0, light_blue);
+        output2_grd.addColorStop(1, blue);
+        output2_ctx.fillStyle = output2_grd;
+        output2_ctx.fill();
+    output2_ctx.strokeText('1',5,30);                                                               
+}
+function clickReporter3(e) {
+    default_colors();
+    //Default row 3     
+    input3_grd = input3_ctx.createLinearGradient(0,0,0, input3.height / 2);
+        input3_grd.addColorStop(0, light_blue);
+        input3_grd.addColorStop(1, blue);
+        input3_ctx.fillStyle = input3_grd;
+        input3_ctx.fill();
+    input3_ctx.strokeText('1',5,30);
+    key3_grd = key3_ctx.createLinearGradient(0,0,0, key3.height / 2);
+        key3_grd.addColorStop(0, light_blue);
+        key3_grd.addColorStop(1, blue);
+        key3_ctx.fillStyle = key3_grd;
+        key3_ctx.fill();
+    key3_ctx.strokeText('0',5,30);
+    output3_grd = output3_ctx.createLinearGradient(0,0,0, output3.height / 2);
+        output3_grd.addColorStop(0, light_blue);
+        output3_grd.addColorStop(1, blue);
+        output3_ctx.fillStyle = output3_grd;
+        output3_ctx.fill();
+    output3_ctx.strokeText('1',5,30);                                                            
+}
+function clickReporter4(e) {
+    default_colors();
+    //Default row 4   
+    input4_grd = input4_ctx.createLinearGradient(0,0,0, input4.height / 2);
+        input4_grd.addColorStop(0, light_blue);
+        input4_grd.addColorStop(1, blue);
+        input4_ctx.fillStyle = input4_grd;
+        input4_ctx.fill();
+    input4_ctx.strokeText('1',5,30);
+    key4_grd = key4_ctx.createLinearGradient(0,0,0, key4.height / 2);
+        key4_grd.addColorStop(0, light_blue);
+        key4_grd.addColorStop(1, blue);
+        key4_ctx.fillStyle = key4_grd;
+        key4_ctx.fill();
+    key4_ctx.strokeText('1',5,30);
+    output4_grd = output4_ctx.createLinearGradient(0,0,0, output4.height / 2);
+        output4_grd.addColorStop(0, light_blue);
+        output4_grd.addColorStop(1, blue);
+        output4_ctx.fillStyle = output4_grd;
+        output4_ctx.fill();
+    output4_ctx.strokeText('0',5,30);                                                                
+}           
+
+function default_colors() {
+    //Light up top row
+    input1_grd = input1_ctx.createLinearGradient(0,0,0, input1.height / 2);
+        input1_grd.addColorStop(0, white);
+        input1_grd.addColorStop(1, light_red);
+        input1_ctx.fillStyle = input1_grd;
+        input1_ctx.fill();
+    input1_ctx.strokeText('0',5,30);
+    key1_grd = key1_ctx.createLinearGradient(0,0,0, key1.height / 2);
+        key1_grd.addColorStop(0, white);
+        key1_grd.addColorStop(1, light_red);
+        key1_ctx.fillStyle = key1_grd;
+        key1_ctx.fill();
+    key1_ctx.strokeText('0',5,30);
+    output1_grd = output1_ctx.createLinearGradient(0,0,0, output1.height / 2);
+        output1_grd.addColorStop(0, white);
+        output1_grd.addColorStop(1, light_red);
+        output1_ctx.fillStyle = output1_grd;
+        output1_ctx.fill();
+    output1_ctx.strokeText('0',5,30);  
+    //Default row 2     
+    input2_grd = input2_ctx.createLinearGradient(0,0,0, input2.height / 2);
+        input2_grd.addColorStop(0, white);
+        input2_grd.addColorStop(1, light_red);
+        input2_ctx.fillStyle = input2_grd;
+        input2_ctx.fill();
+    input2_ctx.strokeText('0',5,30);
+    key2_grd = key2_ctx.createLinearGradient(0,0,0, key2.height / 2);
+        key2_grd.addColorStop(0, white);
+        key2_grd.addColorStop(1, light_red);
+        key2_ctx.fillStyle = key2_grd;
+        key2_ctx.fill();
+    key2_ctx.strokeText('1',5,30);
+    output2_grd = output2_ctx.createLinearGradient(0,0,0, output2.height / 2);
+        output2_grd.addColorStop(0, white);
+        output2_grd.addColorStop(1, light_red);
+        output2_ctx.fillStyle = output2_grd;
+        output2_ctx.fill();
+    output2_ctx.strokeText('1',5,30);   
+    //Default row 3     
+    input3_grd = input3_ctx.createLinearGradient(0,0,0, input3.height / 2);
+        input3_grd.addColorStop(0, white);
+        input3_grd.addColorStop(1, light_red);
+        input3_ctx.fillStyle = input3_grd;
+        input3_ctx.fill();
+    input3_ctx.strokeText('1',5,30);
+    key3_grd = key3_ctx.createLinearGradient(0,0,0, key3.height / 2);
+        key3_grd.addColorStop(0, white);
+        key3_grd.addColorStop(1, light_red);
+        key3_ctx.fillStyle = key3_grd;
+        key3_ctx.fill();
+    key3_ctx.strokeText('0',5,30);
+    output3_grd = output3_ctx.createLinearGradient(0,0,0, output3.height / 2);
+        output3_grd.addColorStop(0, white);
+        output3_grd.addColorStop(1, light_red);
+        output3_ctx.fillStyle = output3_grd;
+        output3_ctx.fill();
+    output3_ctx.strokeText('1',5,30);         
+    //Default row 4   
+    input4_grd = input4_ctx.createLinearGradient(0,0,0, input4.height / 2);
+        input4_grd.addColorStop(0, white);
+        input4_grd.addColorStop(1, light_red);
+        input4_ctx.fillStyle = input4_grd;
+        input4_ctx.fill();
+    input4_ctx.strokeText('1',5,30);
+    key4_grd = key4_ctx.createLinearGradient(0,0,0, key4.height / 2);
+        key4_grd.addColorStop(0, white);
+        key4_grd.addColorStop(1, light_red);
+        key4_ctx.fillStyle = key4_grd;
+        key4_ctx.fill();
+    key4_ctx.strokeText('1',5,30);
+    output4_grd = output4_ctx.createLinearGradient(0,0,0, output4.height / 2);
+        output4_grd.addColorStop(0, white);
+        output4_grd.addColorStop(1, light_red);
+        output4_ctx.fillStyle = output4_grd;
+        output4_ctx.fill();
+    output4_ctx.strokeText('0',5,30);                                                                    
+}
+</script>
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script>
+/**
+ * impress.js
+ *
+ * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
+ * in modern browsers and inspired by the idea behind prezi.com.
+ *
+ *
+ * Copyright 2011-2012 Bartek Szopka (@bartaz)
+ *
+ * Released under the MIT and GPL Licenses.
+ *
+ * ------------------------------------------------
+ *  author:  Bartek Szopka
+ *  version: 0.5.3
+ *  url:     http://bartaz.github.com/impress.js/
+ *  source:  http://github.com/bartaz/impress.js/
+ */
+
+/*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
+         noarg:true, noempty:true, undef:true, strict:true, browser:true */
+
+// You are one of those who like to know how things work inside?
+// Let me show you the cogs that make impress.js run...
+(function ( document, window ) {
+    'use strict';
+    
+    // HELPER FUNCTIONS
+    
+    // `pfx` is a function that takes a standard CSS property name as a parameter
+    // and returns it's prefixed version valid for current browser it runs in.
+    // The code is heavily inspired by Modernizr http://www.modernizr.com/
+    var pfx = (function () {
+        
+        var style = document.createElement('dummy').style,
+            prefixes = 'Webkit Moz O ms Khtml'.split(' '),
+            memory = {};
+        
+        return function ( prop ) {
+            if ( typeof memory[ prop ] === "undefined" ) {
+                
+                var ucProp  = prop.charAt(0).toUpperCase() + prop.substr(1),
+                    props   = (prop + ' ' + prefixes.join(ucProp + ' ') + ucProp).split(' ');
+                
+                memory[ prop ] = null;
+                for ( var i in props ) {
+                    if ( style[ props[i] ] !== undefined ) {
+                        memory[ prop ] = props[i];
+                        break;
+                    }
+                }
+            
+            }
+            
+            return memory[ prop ];
+        };
+    
+    })();
+    
+    // `arraify` takes an array-like object and turns it into real Array
+    // to make all the Array.prototype goodness available.
+    var arrayify = function ( a ) {
+        return [].slice.call( a );
+    };
+    
+    // `css` function applies the styles given in `props` object to the element
+    // given as `el`. It runs all property names through `pfx` function to make
+    // sure proper prefixed version of the property is used.
+    var css = function ( el, props ) {
+        var key, pkey;
+        for ( key in props ) {
+            if ( props.hasOwnProperty(key) ) {
+                pkey = pfx(key);
+                if ( pkey !== null ) {
+                    el.style[pkey] = props[key];
+                }
+            }
+        }
+        return el;
+    };
+    
+    // `toNumber` takes a value given as `numeric` parameter and tries to turn
+    // it into a number. If it is not possible it returns 0 (or other value
+    // given as `fallback`).
+    var toNumber = function (numeric, fallback) {
+        return isNaN(numeric) ? (fallback || 0) : Number(numeric);
+    };
+    
+    // `byId` returns element with given `id` - you probably have guessed that ;)
+    var byId = function ( id ) {
+        return document.getElementById(id);
+    };
+    
+    // `$` returns first element for given CSS `selector` in the `context` of
+    // the given element or whole document.
+    var $ = function ( selector, context ) {
+        context = context || document;
+        return context.querySelector(selector);
+    };
+    
+    // `$$` return an array of elements for given CSS `selector` in the `context` of
+    // the given element or whole document.
+    var $$ = function ( selector, context ) {
+        context = context || document;
+        return arrayify( context.querySelectorAll(selector) );
+    };
+    
+    // `triggerEvent` builds a custom DOM event with given `eventName` and `detail` data
+    // and triggers it on element given as `el`.
+    var triggerEvent = function (el, eventName, detail) {
+        var event = document.createEvent("CustomEvent");
+        event.initCustomEvent(eventName, true, true, detail);
+        el.dispatchEvent(event);
+    };
+    
+    // `translate` builds a translate transform string for given data.
+    var translate = function ( t ) {
+        return " translate3d(" + t.x + "px," + t.y + "px," + t.z + "px) ";
+    };
+    
+    // `rotate` builds a rotate transform string for given data.
+    // By default the rotations are in X Y Z order that can be reverted by passing `true`
+    // as second parameter.
+    var rotate = function ( r, revert ) {
+        var rX = " rotateX(" + r.x + "deg) ",
+            rY = " rotateY(" + r.y + "deg) ",
+            rZ = " rotateZ(" + r.z + "deg) ";
+        
+        return revert ? rZ+rY+rX : rX+rY+rZ;
+    };
+    
+    // `scale` builds a scale transform string for given data.
+    var scale = function ( s ) {
+        return " scale(" + s + ") ";
+    };
+    
+    // `perspective` builds a perspective transform string for given data.
+    var perspective = function ( p ) {
+        return " perspective(" + p + "px) ";
+    };
+    
+    // `getElementFromHash` returns an element located by id from hash part of
+    // window location.
+    var getElementFromHash = function () {
+        // get id from url # by removing `#` or `#/` from the beginning,
+        // so both "fallback" `#slide-id` and "enhanced" `#/slide-id` will work
+        return byId( window.location.hash.replace(/^#\/?/,"") );
+    };
+    
+    // `computeWindowScale` counts the scale factor between window size and size
+    // defined for the presentation in the config.
+    var computeWindowScale = function ( config ) {
+        var hScale = window.innerHeight / config.height,
+            wScale = window.innerWidth / config.width,
+            scale = hScale > wScale ? wScale : hScale;
+        
+        if (config.maxScale && scale > config.maxScale) {
+            scale = config.maxScale;
+        }
+        
+        if (config.minScale && scale < config.minScale) {
+            scale = config.minScale;
+        }
+        
+        return scale;
+    };
+    
+    // CHECK SUPPORT
+    var body = document.body;
+    
+    var ua = navigator.userAgent.toLowerCase();
+    var impressSupported = 
+                          // browser should support CSS 3D transtorms 
+                           ( pfx("perspective") !== null ) &&
+                           
+                          // and `classList` and `dataset` APIs
+                           ( body.classList ) &&
+                           ( body.dataset ) &&
+                           
+                          // but some mobile devices need to be blacklisted,
+                          // because their CSS 3D support or hardware is not
+                          // good enough to run impress.js properly, sorry...
+                           ( ua.search(/(iphone)|(ipod)|(android)/) === -1 );
+    
+    if (!impressSupported) {
+        // we can't be sure that `classList` is supported
+        body.className += " impress-not-supported ";
+    } else {
+        body.classList.remove("impress-not-supported");
+        body.classList.add("impress-supported");
+    }
+    
+    // GLOBALS AND DEFAULTS
+    
+    // This is were the root elements of all impress.js instances will be kept.
+    // Yes, this means you can have more than one instance on a page, but I'm not
+    // sure if it makes any sense in practice ;)
+    var roots = {};
+    
+    // some default config values.
+    var defaults = {
+        width: 1024,
+        height: 768,
+        maxScale: 1,
+        minScale: 0,
+        
+        perspective: 1000,
+        
+        transitionDuration: 1000
+    };
+    
+    // it's just an empty function ... and a useless comment.
+    var empty = function () { return false; };
+    
+    // IMPRESS.JS API
+    
+    // And that's where interesting things will start to happen.
+    // It's the core `impress` function that returns the impress.js API
+    // for a presentation based on the element with given id ('impress'
+    // by default).
+    var impress = window.impress = function ( rootId ) {
+        
+        // If impress.js is not supported by the browser return a dummy API
+        // it may not be a perfect solution but we return early and avoid
+        // running code that may use features not implemented in the browser.
+        if (!impressSupported) {
+            return {
+                init: empty,
+                goto: empty,
+                prev: empty,
+                next: empty
+            };
+        }
+        
+        rootId = rootId || "impress";
+        
+        // if given root is already initialized just return the API
+        if (roots["impress-root-" + rootId]) {
+            return roots["impress-root-" + rootId];
+        }
+        
+        // data of all presentation steps
+        var stepsData = {};
+        
+        // element of currently active step
+        var activeStep = null;
+        
+        // current state (position, rotation and scale) of the presentation
+        var currentState = null;
+        
+        // array of step elements
+        var steps = null;
+        
+        // configuration options
+        var config = null;
+        
+        // scale factor of the browser window
+        var windowScale = null;        
+        
+        // root presentation elements
+        var root = byId( rootId );
+        var canvas = document.createElement("div");
+        
+        var initialized = false;
+        
+        // STEP EVENTS
+        //
+        // There are currently two step events triggered by impress.js
+        // `impress:stepenter` is triggered when the step is shown on the 
+        // screen (the transition from the previous one is finished) and
+        // `impress:stepleave` is triggered when the step is left (the
+        // transition to next step just starts).
+        
+        // reference to last entered step
+        var lastEntered = null;
+        
+        // `onStepEnter` is called whenever the step element is entered
+        // but the event is triggered only if the step is different than
+        // last entered step.
+        var onStepEnter = function (step) {
+            if (lastEntered !== step) {
+                triggerEvent(step, "impress:stepenter");
+                lastEntered = step;
+            }
+        };
+        
+        // `onStepLeave` is called whenever the step element is left
+        // but the event is triggered only if the step is the same as
+        // last entered step.
+        var onStepLeave = function (step) {
+            if (lastEntered === step) {
+                triggerEvent(step, "impress:stepleave");
+                lastEntered = null;
+            }
+        };
+        
+        // `initStep` initializes given step element by reading data from its
+        // data attributes and setting correct styles.
+        var initStep = function ( el, idx ) {
+            var data = el.dataset,
+                step = {
+                    translate: {
+                        x: toNumber(data.x),
+                        y: toNumber(data.y),
+                        z: toNumber(data.z)
+                    },
+                    rotate: {
+                        x: toNumber(data.rotateX),
+                        y: toNumber(data.rotateY),
+                        z: toNumber(data.rotateZ || data.rotate)
+                    },
+                    scale: toNumber(data.scale, 1),
+                    el: el
+                };
+            
+            if ( !el.id ) {
+                el.id = "step-" + (idx + 1);
+            }
+            
+            stepsData["impress-" + el.id] = step;
+            
+            css(el, {
+                position: "absolute",
+                transform: "translate(-50%,-50%)" +
+                           translate(step.translate) +
+                           rotate(step.rotate) +
+                           scale(step.scale),
+                transformStyle: "preserve-3d"
+            });
+        };
+        
+        // `init` API function that initializes (and runs) the presentation.
+        var init = function () {
+            if (initialized) { return; }
+            
+            // First we set up the viewport for mobile devices.
+            // For some reason iPad goes nuts when it is not done properly.
+            var meta = $("meta[name='viewport']") || document.createElement("meta");
+            meta.content = "width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no";
+            if (meta.parentNode !== document.head) {
+                meta.name = 'viewport';
+                document.head.appendChild(meta);
+            }
+            
+            // initialize configuration object
+            var rootData = root.dataset;
+            config = {
+                width: toNumber( rootData.width, defaults.width ),
+                height: toNumber( rootData.height, defaults.height ),
+                maxScale: toNumber( rootData.maxScale, defaults.maxScale ),
+                minScale: toNumber( rootData.minScale, defaults.minScale ),                
+                perspective: toNumber( rootData.perspective, defaults.perspective ),
+                transitionDuration: toNumber( rootData.transitionDuration, defaults.transitionDuration )
+            };
+            
+            windowScale = computeWindowScale( config );
+            
+            // wrap steps with "canvas" element
+            arrayify( root.childNodes ).forEach(function ( el ) {
+                canvas.appendChild( el );
+            });
+            root.appendChild(canvas);
+            
+            // set initial styles
+            document.documentElement.style.height = "100%";
+            
+            css(body, {
+                height: "100%",
+                overflow: "hidden"
+            });
+            
+            var rootStyles = {
+                position: "absolute",
+                transformOrigin: "top left",
+                transition: "all 0s ease-in-out",
+                transformStyle: "preserve-3d"
+            };
+            
+            css(root, rootStyles);
+            css(root, {
+                top: "50%",
+                left: "50%",
+                transform: perspective( config.perspective/windowScale ) + scale( windowScale )
+            });
+            css(canvas, rootStyles);
+            
+            body.classList.remove("impress-disabled");
+            body.classList.add("impress-enabled");
+            
+            // get and init steps
+            steps = $$(".step", root);
+            steps.forEach( initStep );
+            
+            // set a default initial state of the canvas
+            currentState = {
+                translate: { x: 0, y: 0, z: 0 },
+                rotate:    { x: 0, y: 0, z: 0 },
+                scale:     1
+            };
+            
+            initialized = true;
+            
+            triggerEvent(root, "impress:init", { api: roots[ "impress-root-" + rootId ] });
+        };
+        
+        // `getStep` is a helper function that returns a step element defined by parameter.
+        // If a number is given, step with index given by the number is returned, if a string
+        // is given step element with such id is returned, if DOM element is given it is returned
+        // if it is a correct step element.
+        var getStep = function ( step ) {
+            if (typeof step === "number") {
+                step = step < 0 ? steps[ steps.length + step] : steps[ step ];
+            } else if (typeof step === "string") {
+                step = byId(step);
+            }
+            return (step && step.id && stepsData["impress-" + step.id]) ? step : null;
+        };
+        
+        // used to reset timeout for `impress:stepenter` event
+        var stepEnterTimeout = null;
+        
+        // `goto` API function that moves to step given with `el` parameter (by index, id or element),
+        // with a transition `duration` optionally given as second parameter.
+        var goto = function ( el, duration ) {
+            
+            if ( !initialized || !(el = getStep(el)) ) {
+                // presentation not initialized or given element is not a step
+                return false;
+            }
+            
+            // Sometimes it's possible to trigger focus on first link with some keyboard action.
+            // Browser in such a case tries to scroll the page to make this element visible
+            // (even that body overflow is set to hidden) and it breaks our careful positioning.
+            //
+            // So, as a lousy (and lazy) workaround we will make the page scroll back to the top
+            // whenever slide is selected
+            //
+            // If you are reading this and know any better way to handle it, I'll be glad to hear about it!
+            window.scrollTo(0, 0);
+            
+            var step = stepsData["impress-" + el.id];
+            
+            if ( activeStep ) {
+                activeStep.classList.remove("active");
+                body.classList.remove("impress-on-" + activeStep.id);
+            }
+            el.classList.add("active");
+            
+            body.classList.add("impress-on-" + el.id);
+            
+            // compute target state of the canvas based on given step
+            var target = {
+                rotate: {
+                    x: -step.rotate.x,
+                    y: -step.rotate.y,
+                    z: -step.rotate.z
+                },
+                translate: {
+                    x: -step.translate.x,
+                    y: -step.translate.y,
+                    z: -step.translate.z
+                },
+                scale: 1 / step.scale
+            };
+            
+            // Check if the transition is zooming in or not.
+            //
+            // This information is used to alter the transition style:
+            // when we are zooming in - we start with move and rotate transition
+            // and the scaling is delayed, but when we are zooming out we start
+            // with scaling down and move and rotation are delayed.
+            var zoomin = target.scale >= currentState.scale;
+            
+            duration = toNumber(duration, config.transitionDuration);
+            var delay = (duration / 2);
+            
+            // if the same step is re-selected, force computing window scaling,
+            // because it is likely to be caused by window resize
+            if (el === activeStep) {
+                windowScale = computeWindowScale(config);
+            }
+            
+            var targetScale = target.scale * windowScale;
+            
+            // trigger leave of currently active element (if it's not the same step again)
+            if (activeStep && activeStep !== el) {
+                onStepLeave(activeStep);
+            }
+            
+            // Now we alter transforms of `root` and `canvas` to trigger transitions.
+            //
+            // And here is why there are two elements: `root` and `canvas` - they are
+            // being animated separately:
+            // `root` is used for scaling and `canvas` for translate and rotations.
+            // Transitions on them are triggered with different delays (to make
+            // visually nice and 'natural' looking transitions), so we need to know
+            // that both of them are finished.
+            css(root, {
+                // to keep the perspective look similar for different scales
+                // we need to 'scale' the perspective, too
+                transform: perspective( config.perspective / targetScale ) + scale( targetScale ),
+                transitionDuration: duration + "ms",
+                transitionDelay: (zoomin ? delay : 0) + "ms"
+            });
+            
+            css(canvas, {
+                transform: rotate(target.rotate, true) + translate(target.translate),
+                transitionDuration: duration + "ms",
+                transitionDelay: (zoomin ? 0 : delay) + "ms"
+            });
+            
+            // Here is a tricky part...
+            //
+            // If there is no change in scale or no change in rotation and translation, it means there was actually
+            // no delay - because there was no transition on `root` or `canvas` elements.
+            // We want to trigger `impress:stepenter` event in the correct moment, so here we compare the current
+            // and target values to check if delay should be taken into account.
+            //
+            // I know that this `if` statement looks scary, but it's pretty simple when you know what is going on
+            // - it's simply comparing all the values.
+            if ( currentState.scale === target.scale ||
+                (currentState.rotate.x === target.rotate.x && currentState.rotate.y === target.rotate.y &&
+                 currentState.rotate.z === target.rotate.z && currentState.translate.x === target.translate.x &&
+                 currentState.translate.y === target.translate.y && currentState.translate.z === target.translate.z) ) {
+                delay = 0;
+            }
+            
+            // store current state
+            currentState = target;
+            activeStep = el;
+            
+            // And here is where we trigger `impress:stepenter` event.
+            // We simply set up a timeout to fire it taking transition duration (and possible delay) into account.
+            //
+            // I really wanted to make it in more elegant way. The `transitionend` event seemed to be the best way
+            // to do it, but the fact that I'm using transitions on two separate elements and that the `transitionend`
+            // event is only triggered when there was a transition (change in the values) caused some bugs and 
+            // made the code really complicated, cause I had to handle all the conditions separately. And it still
+            // needed a `setTimeout` fallback for the situations when there is no transition at all.
+            // So I decided that I'd rather make the code simpler than use shiny new `transitionend`.
+            //
+            // If you want learn something interesting and see how it was done with `transitionend` go back to
+            // version 0.5.2 of impress.js: http://github.com/bartaz/impress.js/blob/0.5.2/js/impress.js
+            window.clearTimeout(stepEnterTimeout);
+            stepEnterTimeout = window.setTimeout(function() {
+                onStepEnter(activeStep);
+            }, duration + delay);
+            
+            return el;
+        };
+        
+        // `prev` API function goes to previous step (in document order)
+        var prev = function () {
+            var prev = steps.indexOf( activeStep ) - 1;
+            prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
+            
+            return goto(prev);
+        };
+        
+        // `next` API function goes to next step (in document order)
+        var next = function () {
+            var next = steps.indexOf( activeStep ) + 1;
+            next = next < steps.length ? steps[ next ] : steps[ 0 ];
+            
+            return goto(next);
+        };
+        
+        // Adding some useful classes to step elements.
+        //
+        // All the steps that have not been shown yet are given `future` class.
+        // When the step is entered the `future` class is removed and the `present`
+        // class is given. When the step is left `present` class is replaced with
+        // `past` class.
+        //
+        // So every step element is always in one of three possible states:
+        // `future`, `present` and `past`.
+        //
+        // There classes can be used in CSS to style different types of steps.
+        // For example the `present` class can be used to trigger some custom
+        // animations when step is shown.
+        root.addEventListener("impress:init", function(){
+            // STEP CLASSES
+            steps.forEach(function (step) {
+                step.classList.add("future");
+            });
+            
+            root.addEventListener("impress:stepenter", function (event) {
+                event.target.classList.remove("past");
+                event.target.classList.remove("future");
+                event.target.classList.add("present");
+            }, false);
+            
+            root.addEventListener("impress:stepleave", function (event) {
+                event.target.classList.remove("present");
+                event.target.classList.add("past");
+            }, false);
+            
+        }, false);
+        
+        // Adding hash change support.
+        root.addEventListener("impress:init", function(){
+            
+            // last hash detected
+            var lastHash = "";
+            
+            // `#/step-id` is used instead of `#step-id` to prevent default browser
+            // scrolling to element in hash.
+            //
+            // And it has to be set after animation finishes, because in Chrome it
+            // makes transtion laggy.
+            // BUG: http://code.google.com/p/chromium/issues/detail?id=62820
+            root.addEventListener("impress:stepenter", function (event) {
+                window.location.hash = lastHash = "#/" + event.target.id;
+            }, false);
+            
+            window.addEventListener("hashchange", function () {
+                // When the step is entered hash in the location is updated
+                // (just few lines above from here), so the hash change is 
+                // triggered and we would call `goto` again on the same element.
+                //
+                // To avoid this we store last entered hash and compare.
+                if (window.location.hash !== lastHash) {
+                    goto( getElementFromHash() );
+                }
+            }, false);
+            
+            // START 
+            // by selecting step defined in url or first step of the presentation
+            goto(getElementFromHash() || steps[0], 0);
+        }, false);
+        
+        body.classList.add("impress-disabled");
+        
+        // store and return API for given impress.js root element
+        return (roots[ "impress-root-" + rootId ] = {
+            init: init,
+            goto: goto,
+            next: next,
+            prev: prev
+        });
+
+    };
+    
+    // flag that can be used in JS to check if browser have passed the support test
+    impress.supported = impressSupported;
+    
+})(document, window);
+
+// NAVIGATION EVENTS
+
+// As you can see this part is separate from the impress.js core code.
+// It's because these navigation actions only need what impress.js provides with
+// its simple API.
+//
+// In future I think about moving it to make them optional, move to separate files
+// and treat more like a 'plugins'.
+(function ( document, window ) {
+    'use strict';
+    
+    // throttling function calls, by Remy Sharp
+    // http://remysharp.com/2010/07/21/throttling-function-calls/
+    var throttle = function (fn, delay) {
+        var timer = null;
+        return function () {
+            var context = this, args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                fn.apply(context, args);
+            }, delay);
+        };
+    };
+    
+    // wait for impress.js to be initialized
+    document.addEventListener("impress:init", function (event) {
+        // Getting API from event data.
+        // So you don't event need to know what is the id of the root element
+        // or anything. `impress:init` event data gives you everything you 
+        // need to control the presentation that was just initialized.
+        var api = event.detail.api;
+        
+        // KEYBOARD NAVIGATION HANDLERS
+        
+        // Prevent default keydown action when one of supported key is pressed.
+        document.addEventListener("keydown", function ( event ) {
+            if ( event.keyCode === 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
+                event.preventDefault();
+            }
+        }, false);
+        
+        // Trigger impress action (next or prev) on keyup.
+        
+        // Supported keys are:
+        // [space] - quite common in presentation software to move forward
+        // [up] [right] / [down] [left] - again common and natural addition,
+        // [pgdown] / [pgup] - often triggered by remote controllers,
+        // [tab] - this one is quite controversial, but the reason it ended up on
+        //   this list is quite an interesting story... Remember that strange part
+        //   in the impress.js code where window is scrolled to 0,0 on every presentation
+        //   step, because sometimes browser scrolls viewport because of the focused element?
+        //   Well, the [tab] key by default navigates around focusable elements, so clicking
+        //   it very often caused scrolling to focused element and breaking impress.js
+        //   positioning. I didn't want to just prevent this default action, so I used [tab]
+        //   as another way to moving to next step... And yes, I know that for the sake of
+        //   consistency I should add [shift+tab] as opposite action...
+        document.addEventListener("keyup", function ( event ) {
+            if ( event.keyCode === 9 || ( event.keyCode >= 32 && event.keyCode <= 34 ) || (event.keyCode >= 37 && event.keyCode <= 40) ) {
+                switch( event.keyCode ) {
+                    case 33: // pg up
+                    case 37: // left
+                    case 38: // up
+                             api.prev();
+                             break;
+                    case 9:  // tab
+                    case 32: // space
+                    case 34: // pg down
+                    case 39: // right
+                    case 40: // down
+                             api.next();
+                             break;
+                }
+                
+                event.preventDefault();
+            }
+        }, false);
+        
+        // delegated handler for clicking on the links to presentation steps
+        document.addEventListener("click", function ( event ) {
+            // event delegation with "bubbling"
+            // check if event target (or any of its parents is a link)
+            var target = event.target;
+            while ( (target.tagName !== "A") &&
+                    (target !== document.documentElement) ) {
+                target = target.parentNode;
+            }
+            
+            if ( target.tagName === "A" ) {
+                var href = target.getAttribute("href");
+                
+                // if it's a link to presentation step, target this step
+                if ( href && href[0] === '#' ) {
+                    target = document.getElementById( href.slice(1) );
+                }
+            }
+            
+            if ( api.goto(target) ) {
+                event.stopImmediatePropagation();
+                event.preventDefault();
+            }
+        }, false);
+        
+        // delegated handler for clicking on step elements
+        document.addEventListener("click", function ( event ) {
+            var target = event.target;
+            // find closest step element that is not active
+            while ( !(target.classList.contains("step") && !target.classList.contains("active")) &&
+                    (target !== document.documentElement) ) {
+                target = target.parentNode;
+            }
+            
+            if ( api.goto(target) ) {
+                event.preventDefault();
+            }
+        }, false);
+        
+        // touch handler to detect taps on the left and right side of the screen
+        // based on awesome work of @hakimel: https://github.com/hakimel/reveal.js
+        document.addEventListener("touchstart", function ( event ) {
+            if (event.touches.length === 1) {
+                var x = event.touches[0].clientX,
+                    width = window.innerWidth * 0.3,
+                    result = null;
+                    
+                if ( x < width ) {
+                    result = api.prev();
+                } else if ( x > window.innerWidth - width ) {
+                    result = api.next();
+                }
+                
+                if (result) {
+                    event.preventDefault();
+                }
+            }
+        }, false);
+        
+        // rescale presentation when window is resized
+        window.addEventListener("resize", throttle(function () {
+            // force going to active step again, to trigger rescaling
+            api.goto( document.querySelector(".step.active"), 500 );
+        }, 250), false);
+        
+    }, false);
+        
+})(document, window);
+
+// THAT'S ALL FOLKS!
+//
+// Thanks for reading it all.
+// Or thanks for scrolling down and reading the last part.
+//
+// I've learnt a lot when building impress.js and I hope this code and comments
+// will help somebody learn at least some part of it.
+
+</script>
+
+<script>impress().init();</script>
+
+<style>
+/*
+    So you like the style of impress.js demo?
+    Or maybe you are just curious how it was done?
+
+    You couldn't find a better place to find out!
+
+    Welcome to the stylesheet impress.js demo presentation.
+
+    Please remember that it is not meant to be a part of impress.js and is
+    not required by impress.js.
+    I expect that anyone creating a presentation for impress.js would create
+    their own set of styles.
+
+    But feel free to read through it and learn how to get the most of what
+    impress.js provides.
+
+    And let me be your guide.
+
+    Shall we begin?
+*/
+
+
+/*
+    We start with a good ol' reset.
+    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
+
+    You can probably argue if it is needed here, or not, but for sure it
+    doesn't do any harm and gives us a fresh start.
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+    Now here is when interesting things start to appear.
+
+    We set up <body> styles with default font and nice gradient in the background.
+    And yes, there is a lot of repetition there because of -prefixes but we don't
+    want to leave anybody behind.
+*/
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+
+    background: rgb(0, 255, 0);
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(64, 0, 0)), to(rgb(0, 0, 0)));
+    background: -webkit-radial-gradient(rgb(64, 0, 0), rgb(0, 0, 0));
+    background:    -moz-radial-gradient(rgb(64, 0, 0), rgb(0, 0, 0));
+    background:     -ms-radial-gradient(rgb(64, 0, 0), rgb(0, 0, 0));
+    background:      -o-radial-gradient(rgb(64, 0, 0), rgb(0, 0, 0));
+    background:         radial-gradient(rgb(64, 0, 0), rgb(0, 0, 0));
+}
+
+/*
+    Now let's bring some text styles back ...
+*/
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+
+/*
+    ... and give links a nice look.
+*/
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(255,255,255,0.5);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+a:hover,
+a:focus {
+    background: rgba(255,255,255,1);
+    text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
+}
+
+/*
+    Because the main point behind the impress.js demo is to demo impress.js
+    we display a fallback message for users with browsers that don't support
+    all the features required by it.
+
+    All of the content will be still fully accessible for them, but I want
+    them to know that they are missing something - that's what the demo is
+    about, isn't it?
+
+    And then we hide the message, when support is detected in the browser.
+*/
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/*
+    Now let's style the presentation steps.
+
+    We start with basics to make sure it displays correctly in everywhere ...
+*/
+
+blockquote.stylex {
+    font: 22px/22px normal helvetica, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 15px;
+    border-left: 3px solid #00f;
+}
+
+table.table1{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    border-collapse:separate;
+}
+
+.table1 thead th{
+    padding:8px;
+    color:#fff;
+    text-shadow:1px 1px 1px #EE0000;
+    border: 1px solid #EE0000;
+    border-bottom: 3px solid #AA0000;
+    background-color:#400000;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(0,0,0)),
+        color-stop(0.51, rgb(100,0,0)),
+        color-stop(0.87, rgb(240,0,0))
+        );
+    background: -moz-linear-gradient(
+        center bottom,
+        rgb(0,0,0) 2%,
+        rgb(100,0,0) 51%,
+        rgb(240,0,0) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+.table1 thead th:empty{
+    background:transparent;
+    border:none;
+}
+
+.table1 tfoot td{
+    color: #0000DD;
+    font-size:32px;
+    text-align:center;
+    padding:10px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+
+.table1 tfoot th{
+    color:#666;
+}
+
+.table1 tbody td{
+    padding:30px;
+    text-align:center;
+    background-color:#FF4444;
+    border: 1px solid #222222;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#000;
+    text-shadow:1px 1px 1px #fff;
+}
+
+table.table2{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    border-collapse:separate;
+}
+
+.table2 thead th{
+    padding:30px;
+    color:#fff;
+    text-shadow:1px 1px 1px #EE0000;
+    border: 1px solid #EE0000;
+    border-bottom: 3px solid #AA0000;
+    background-color:#400000;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(0,0,0)),
+        color-stop(0.51, rgb(100,0,0)),
+        color-stop(0.87, rgb(240,0,0))
+        );
+    background: -moz-linear-gradient(
+        center bottom,
+        rgb(0,0,0) 2%,
+        rgb(100,0,0) 51%,
+        rgb(240,0,0) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+.table2 thead th:empty{
+    background:transparent;
+    border:none;
+}
+
+.table2 tfoot td{
+    color: #0000DD;
+    font-size:32px;
+    text-align:center;
+    padding:10px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+
+.table2 tfoot th{
+    color:#666;
+}
+
+.table2 tbody td{
+    padding:30px;
+    text-align:center;
+    background-color:#FFCCCC;
+    border: 1px solid #222222;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#000;
+    text-shadow:1px 1px 1px #fff;
+}
+
+table.tablex{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    border-collapse:separate;
+}
+
+.tablex thead th{
+    padding:15px;
+    color:#fff;
+    text-shadow:1px 1px 1px #0000EE;
+    border: 1px solid #0000EE;
+    border-bottom: 3px solid #0000AA;
+    background-color:#000040;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.02, rgb(0,0,0)),
+        color-stop(0.51, rgb(0,0,10)),
+        color-stop(0.87, rgb(0,0,240))
+        );
+    background: -moz-linear-gradient(
+        center bottom,
+        rgb(0,0,0) 2%,
+        rgb(0,0,100) 51%,
+        rgb(0,0,240) 87%
+        );
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+.tablex thead th:empty{
+    background:transparent;
+    border:none;
+}
+
+.tablex tfoot td{
+    color: #0000DD;
+    font-size:32px;
+    text-align:center;
+    padding:10px 0px;
+    text-shadow:1px 1px 1px #444;
+}
+
+.tablex tfoot th{
+    color:#666;
+}
+
+.tablex tbody td{
+    padding:10px;
+    text-align:center;
+    background-color:#0000DD;
+    border: 2px solid #0000EE;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    color:#666;
+    text-shadow:1px 1px 1px #fff;
+}
+
+.step {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+/*
+    ... and we enhance the styles for impress.js.
+
+    Basically we remove the margin and make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+/*
+    These 'slide' step styles were heavily inspired by HTML5 Slides:
+    http://html5slides.googlecode.com/svn/trunk/styles.css
+
+    ;)
+
+    They cover everything what you see on first three steps of the demo.
+*/
+.slide {
+    display: block;
+
+    width: 900px;
+    height: 800px;
+    padding: 40px 60px;
+
+    background-color: rgba(255, 245, 245, 1);
+    border: 10px solid rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(0, 0, 0);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+
+    margin-top: 10px;
+}
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+/*
+    And now we start to style each step separately.
+
+    I agree that this may be not the most efficient, object-oriented and
+    scalable way of styling, but most of steps have quite a custom look
+    and typography tricks here and there, so they had to be styled separately.
+
+    First is the title step with a big <h1> (no room for padding) and some
+    3D positioning along Z axis.
+*/
+
+#title {
+    padding: 0;
+}
+
+#title .try {
+    font-size: 64px;
+    position: absolute;
+    top: -0.5em;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+
+#title h1 {
+    font-size: 190px;
+
+    -webkit-transform: translateZ(50px);
+    -moz-transform:    translateZ(50px);
+    -ms-transform:     translateZ(50px);
+    -o-transform:      translateZ(50px);
+    transform:         translateZ(50px);
+}
+
+#title .footnote {
+    font-size: 32px;
+}
+
+/*
+    Now, when we have all the steps styled let's give users a hint how to navigate
+    around the presentation.
+
+    The best way to do this would be to use JavaScript, show a delayed hint for a
+    first time users, then hide it and store a status in cookie or localStorage...
+
+    But I wanted to have some CSS fun and avoid additional scripting...
+
+    Let me explain it first, so maybe the transition magic will be more readable
+    when you read the code.
+
+    First of all I wanted the hint to appear only when user is idle for a while.
+    You can't detect the 'idle' state in CSS, but I delayed a appearing of the
+    hint by 5s using transition-delay.
+
+    You also can't detect in CSS if the user is a first-time visitor, so I had to
+    make an assumption that I'll only show the hint on the first step. And when
+    the step is changed hide the hint, because I can assume that user already
+    knows how to navigate.
+
+    To summarize it - hint is shown when the user is on the first step for longer
+    than 5 seconds.
+
+    The other problem I had was caused by the fact that I wanted the hint to fade
+    in and out. It can be easily achieved by transitioning the opacity property.
+    But that also meant that the hint was always on the screen, even if totally
+    transparent. It covered part of the screen and you couldn't correctly clicked
+    through it.
+    Unfortunately you cannot transition between display `block` and `none` in pure
+    CSS, so I needed a way to not only fade out the hint but also move it out of
+    the screen.
+
+    I solved this problem by positioning the hint below the bottom of the screen
+    with CSS transform and moving it up to show it. But I also didn't want this move
+    to be visible. I wanted the hint only to fade in and out visually, so I delayed
+    the fade in transition, so it starts when the hint is already in its correct
+    position on the screen.
+
+    I know, it sounds complicated ... maybe it would be easier with the code?
+*/
+
+.hint {
+    /*
+        We hide the hint until presentation is started and from browsers not supporting
+        impress.js, as they will have a linear scrollable view ...
+    */
+    display: none;
+
+    /*
+        ... and give it some fixed position and nice styles.
+    */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 200px;
+
+    background: rgba(0,0,0,0.5);
+    color: #EEE;
+    text-align: center;
+
+    font-size: 50px;
+    padding: 20px;
+
+    z-index: 100;
+
+    /*
+        By default we don't want the hint to be visible, so we make it transparent ...
+    */
+    opacity: 0;
+
+    /*
+        ... and position it below the bottom of the screen (relative to it's fixed position)
+    */
+    -webkit-transform: translateY(400px);
+    -moz-transform:    translateY(400px);
+    -ms-transform:     translateY(400px);
+    -o-transform:      translateY(400px);
+    transform:         translateY(400px);
+
+    /*
+        Now let's imagine that the hint is visible and we want to fade it out and move out
+        of the screen.
+
+        So we define the transition on the opacity property with 1s duration and another
+        transition on transform property delayed by 1s so it will happen after the fade out
+        on opacity finished.
+
+        This way user will not see the hint moving down.
+    */
+    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
+    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
+    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
+    transition:         opacity 1s,         transform 0.5s 1s;
+}
+
+/*
+    Now we 'enable' the hint when presentation is initialized ...
+*/
+.impress-enabled .hint { display: block }
+
+/*
+    ... and we will show it when the first step (with id 'bored') is active.
+*/
+.impress-on-bored .hint {
+    /*
+        We remove the transparency and position the hint in its default fixed
+        position.
+    */
+    opacity: 1;
+
+    -webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+
+    /*
+        Now for fade in transition we have the oposite situation from the one
+        above.
+
+        First after 4.5s delay we animate the transform property to move the hint
+        into its correct position and after that we fade it in with opacity
+        transition.
+    */
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+    -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+    transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+}
+
+/*
+    And as the last thing there is a workaround for quite strange bug.
+    It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
+
+    Sometimes the element positioned in 3D (especially when it's moved back
+    along Z axis) is not clickable, because it falls 'behind' the <body>
+    element.
+
+    To prevent this, I decided to make <body> non clickable by setting
+    pointer-events property to `none` value.
+    Value if this property is inherited, so to make everything else clickable
+    I bring it back on the #impress element.
+
+    If you want to know more about `pointer-events` here are some docs:
+    https://developer.mozilla.org/en/CSS/pointer-events
+
+    There is one very important thing to notice about this workaround - it makes
+    everything 'unclickable' except what's in #impress element.
+
+    So use it wisely ... or don't use at all.
+*/
+.impress-enabled          { pointer-events: none }
+.impress-enabled #impress { pointer-events: auto }
+
+/*
+    There is one funny thing I just realized.
+
+    Thanks to this workaround above everything except #impress element is invisible
+    for click events. That means that the hint element is also not clickable.
+    So basically all of this transforms and delayed transitions trickery was probably
+    not needed at all...
+
+    But it was fun to learn about it, wasn't it?
+*/
+
+/*
+    That's all I have for you in this file.
+    Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
+    for you.
+*/
+</style>
+
+</body>
+</html>
